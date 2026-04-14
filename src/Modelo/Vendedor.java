@@ -7,12 +7,12 @@ public class Vendedor {
     private double porcentajeComision;
     private double cumplimientoMeta;
 
-    public Vendedor(String nombre, String area, double montoVendido, double porcentajeComision , double cumplimientoMeta){
-        this.nombre = nombre;
-        this.area = area;
-        this.montoVendido = montoVendido;
-        this.porcentajeComision = porcentajeComision;
-        this.cumplimientoMeta = cumplimientoMeta;
+    public Vendedor(){
+        this.nombre = "Andrea Lopez";
+        this.area = "Tecnologia";
+        this.montoVendido = 2850.75;
+        this.porcentajeComision = 8;
+        this.cumplimientoMeta = 92;
     }
 
     //Getters
@@ -37,14 +37,13 @@ public class Vendedor {
     }
 
     //Setter con validaciones
-    public void setMontoVendido(){
+    public void setMontoVendido(double montoVendido){
         if(montoVendido > 0){
             this.montoVendido = montoVendido;
         }else{
             System.out.println("El monto no es valido");
         }
     }
-
 
     public double calcularComision(){
         return montoVendido * (porcentajeComision/100);
@@ -64,7 +63,7 @@ public class Vendedor {
         }
     }
 
-    public String obtenerMensajeDesempeño(){
+    public String obtenerMensajeDesempeno(){
         if (cumplimientoMeta >= 90){
             return "Vendedor con empeño sobresaliente";
         }else if (cumplimientoMeta >=70){
